@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" >
+    <title>Tutorial Sorting</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <img src="Image\Logo.png" alt="" width="75" height="75" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="#Sorting">Sorting</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active text-white" aria-current="page" href="#Tutorial">Tutorial</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div>
+    <img src="Image/Thumbnail.png" width="100%" height="100%">
+  </div>
+
+  <section id="Sorting" style="height: auto">
+    <div class="container">
+      <h1 class="text-center display-3 mb-3 mt-3">Maximum Sort</h1>
+      <div class="row my-3 align-self-center justify-content-md-center">
+        <div class="col-md-5">
+          <img class="gambar" src="image/Max.png" />
+        </div>
+        <div class="col-md-7 align-self-center justify-content-md-center">
+          <h3 class="fw-bold">Apa itu maximum sort?</h3>
+          <p>
+            Maximum sort merupakan pemilihan elemen berdasarkan elemen maksimum. Konsepnya adalah memilih elemen maksimum kemudian mempertukarkan elemen maksimum tersebut dengan elemen paling akhir untuk
+            urut menaik dan elemen pertama untuk urut menurun. Selanjutnya elemen paling akhir/awal tersebut di-“isolasi”, artinya elemen tersebut tidak disertakan lagi untuk tahapan berikutnya. Proses yang
+            sama dilakukan kembali terhadap elemen array yang tersisa, yaitu memilih elemen maksimum kemudian mempertukarkan elemen maksimum tersebut dengan elemen paling akhir/awal dari array yang tersisa tadi.
+            Kemudian diisolasi kembali. Demikian seterusnya hingga semua elemen terurut.
+          </p>
+        </div>
+        <div class="copy">
+          <textarea style="text-align: left;" readonly spellcheck="false" class="text-code mt-3">
+def Maxsort(N):
+    for p in range(0,N-1,1):
+        imax = p
+        for i in range (p+1,N,1):
+            if A[i]> A[imax]:
+                imax = i
+        tem = A[p]
+        A[p] = A[imax]
+        A[imax] = tem
+    return
+          </textarea>
+          <p></p>
+          <button class="copy-button">
+            <i class="fa fa-clone"></i>
+          </button>
+        </div>
+      </div>
+      <hr class="pembatas" />
+    </div>
+    
+    <div class="container">
+      <h1 class="text-center display-3 mb-3 mt-3">Insertion Sort</h1>
+      <div class="row my-3 align-self-center justify-content-md-center">
+        <div class="col-md-5">
+          <img class="gambar" src="image/Insert.png" />
+          <!-- Sumber : Freepik.com -->
+        </div>
+        <div class="col-md-7 align-self-center justify-content-md-center">
+          <h3 class="fw-bold">Apa itu insertion sort?</h3>
+          <p>
+            Metode Insertion Sort merupakan metode pengurutan dengan cara menyisipkan elemen array pada posisi yang tepat. Pencarian yang tepat dilakukan dengan melakukan pencarian beruntun di dalam array. 
+            Selama pencarian posisi yang tepat dilakukan pergeseran elemen array. Algoritma pengurutan ini tepat untuk persoalan menyisipkan elemen baru ke dalam array yang sudah terurut. Misalnya dalam permainan
+            kartu, kartu yang dicabut biasanya disisipkan oleh pemain pada posisi yang tepat sehingga penambahan kartu tersebut membuat semua kartu tetap terurut.
+          </p>
+        </div>
+        <div class="copy">
+          <textarea style="text-align: left;" readonly spellcheck="false" class="text-code mt-3">
+def insertionSort(N):
+    for p in range(1,N,1):
+        tem = A[p]
+        i = p-1
+        while (tem < A[i] and i > 0):
+            A[i+1] = A[i]
+            i = i-1
+        if (tem >= A[i]):
+            A[i+1]= tem
+        else:
+            A[i+1]= A[i]
+            A[i]= tem
+    return 
+          </textarea>
+          <p id="Tutorial"></p>
+          <button class="copy-button">
+            <i class="fa fa-clone"></i>
+          </button>
+        </div>
+      </div>
+      <hr class="pembatas" />
+    </div>
+    
+    <div class="container">
+      <h1 class="text-center display-3 mb-3 mt-3">Video Tutorial</h1>
+      <div class="row my-3 align-self-center justify-content-md-center">
+        <video class="video" controls src="Image/Tutorial Sorting.mp4"></video>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="bg-dark text-center text-white">
+    <div class="container p-4 pb-0">
+      <section class="mb-4">
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/willyandie.s_/" role="button">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/willyandie-saputra-678b95238/" role="button">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/Willyandie" role="button">
+          <i class="fab fa-github"></i>
+        </a>
+      </section>
+    </div>
+  
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2023 Copyright Willyandie Saputra
+    </div>
+  </footer>
+
+  <script type="text/javascript">
+    const copyBtn = document.querySelector(".copy-button");
+    const textArea = document.querySelector("textarea");
+    copyBtn.addEventListener("click",()=>{
+        textArea.select();
+        document.execCommand("copy");
+        copyBtn.innerHTML = "<i class='fa fa-check'></i>";
+        setTimeout(()=>{
+            document.getSelection().removeAllRanges();
+            copyBtn.innerHTML = "<i class='fa fa-clone'></i>"
+        },2000);
+    });
+  </script>
+
+</body>
+</html>

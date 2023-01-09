@@ -1,0 +1,54 @@
+.navbar {
+    background-color: #2596be;
+    color: white;
+}
+
+.gambar {
+    height: auto;
+    max-height: 300px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.pembatas {
+    color: black;
+    height: 0.4rem;
+    background-color: black;
+}
+
+  .copy{
+    text-align: center;
+    width: 600px;
+    margin: auto;
+}
+.text-code{
+    width: 50%;
+    min-height: 250px;
+    background-color: #262721;
+    color: white;
+}
+.copy-button{
+    margin: auto;
+    padding: 5px;
+    width: 60px;
+    background-color: #bf9b30;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.copy-button:hover{
+
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #bf9b30;
+    transition: 0.5s;
+}
+
+.video {
+  width: 20%;
+  height: 20%;
+  margin: auto;
+  float: center;
+}
